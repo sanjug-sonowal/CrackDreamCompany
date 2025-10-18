@@ -1,0 +1,22 @@
+// Last updated: 18/10/2025, 09:00:20
+class Solution {
+public:
+    string smallestNumber(string pattern) {
+        string result;
+        stack<int> st;
+        
+        for (int i = 0; i <= pattern.size(); ++i) {
+            st.push(i + 1);
+            
+            // When we reach 'I' or the end of the pattern, process the stack
+            if (i == pattern.size() || pattern[i] == 'I') {
+                while (!st.empty()) {
+                    result += to_string(st.top());
+                    st.pop();
+                }
+            }
+        }
+        
+        return result;
+    }
+};
