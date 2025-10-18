@@ -1,0 +1,19 @@
+// Last updated: 18/10/2025, 09:06:51
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int start = 0;
+        int end = nums.size() - 1;
+        while(start <= end){
+            int sum = nums[start] + nums[end];
+            if(sum == target){
+                return {start + 1,end + 1};
+            }else if(sum < target){
+                start++;
+            }else{
+                end--;
+            }
+        }
+        return {};
+    }
+};
